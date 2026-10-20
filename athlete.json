@@ -1,0 +1,11 @@
+{
+  "name": "Sample athlete",
+  "goal": "First half marathon, finish strong in about 2h05",
+  "race_km": 21.1,
+  "race_date": "2027-01-24",
+  "weeks": 12,
+  "current_weekly_km": 25,
+  "longest_recent_run_km": 10,
+  "days_per_week": 4,
+  "notes": "Desk job, runs before work on weekdays. Left calf tightness after back-to-back hard days last year."
+}
