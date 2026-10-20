@@ -113,6 +113,11 @@ def week_km(week: dict) -> float:
     return sum(s["distance_km"] for s in week["sessions"] if s["type"] in RUN_TYPES)
 
 
+def long_run_share(days_per_week: int) -> float:
+    """Max share of weekly km for the long run; a flat 35% is unsatisfiable on 4 days."""
+    return 0.45 if days_per_week <= 4 else 0.40 if days_per_week == 5 else 0.35
+
+
 def validate(plan: dict, athlete: dict) -> list[str]:
     v: list[str] = []
     weeks = plan.get("weeks")
@@ -147,6 +152,10 @@ def validate(plan: dict, athlete: dict) -> list[str]:
         i for i in range(3, n - 2, 4)
     }  # 0-based: weeks 4, 8, ... outside the taper
     taper = {n - 2, n - 1}
+
+    # Fewer running days means the long run is a bigger share of the week: a 4-day
+    # runner doing 25 km with a 10 km long run is already at 40%.
+    long_share = long_run_share(athlete["days_per_week"])
 
     for i, w in enumerate(weeks):
         wk = i + 1
@@ -185,9 +194,9 @@ def validate(plan: dict, athlete: dict) -> list[str]:
                 (s["distance_km"] for s in w["sessions"] if s["type"] in RUN_TYPES),
                 default=0,
             )
-            if longest > 0.35 * vols[i] + 0.05:
+            if longest > long_share * vols[i] + 0.05:
                 v.append(
-                    f"week {wk}: longest run {longest:.1f} km is over 35% of the week ({vols[i]:.1f} km)"
+                    f"week {wk}: longest run {longest:.1f} km is over {long_share:.0%} of the week ({vols[i]:.1f} km)"
                 )
             hard = sum(
                 s["distance_km"] for s in w["sessions"] if s["type"] in HARD_TYPES
