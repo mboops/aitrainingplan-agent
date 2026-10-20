@@ -1,0 +1,17 @@
+[
+  "week 1: 28.0 km exceeds 110% of current 25 km (27.5)",
+  "week 1: longest run 10.0 km is over 35% of the week (28.0 km)",
+  "week 2: longest run 11.0 km is over 35% of the week (29.0 km)",
+  "week 3: 32.0 km is more than +10% on week 2 (29.0 km, cap 31.9)",
+  "week 3: longest run 12.0 km is over 35% of the week (32.0 km)",
+  "week 4: longest run 9.0 km is over 35% of the week (19.0 km)",
+  "week 5: longest run 13.0 km is over 35% of the week (33.0 km)",
+  "week 6: longest run 14.0 km is over 35% of the week (34.0 km)",
+  "week 7: longest run 15.0 km is over 35% of the week (37.0 km)",
+  "week 8: longest run 11.0 km is over 35% of the week (22.0 km)",
+  "week 9: longest run 16.0 km is over 35% of the week (39.0 km)",
+  "week 9: 10.0 km hard is over 25% of 39.0 km (80/20 with warm-up slack)",
+  "week 10: longest run 17.0 km is over 35% of the week (39.0 km)",
+  "week 11: longest run 14.0 km is over 35% of the week (34.0 km)",
+  "week 11: taper must be <=80% of peak (34.0 vs cap 31.2 km)"
+]

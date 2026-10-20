@@ -1,0 +1,400 @@
+{
+  "weeks": [
+    {
+      "week": 1,
+      "sessions": [
+        {
+          "day": "Mon",
+          "type": "easy",
+          "distance_km": 5.0,
+          "intensity": "easy",
+          "description": "Comfortable run, relaxed pace, able to hold conversation (RPE 3-4/10)."
+        },
+        {
+          "day": "Wed",
+          "type": "intervals",
+          "distance_km": 6.0,
+          "intensity": "hard",
+          "description": "Warm up 1.5km easy, then 4 x 3min at steady effort (RPE 6/10) with 2min easy jog between; cool down to finish."
+        },
+        {
+          "day": "Fri",
+          "type": "easy",
+          "distance_km": 5.0,
+          "intensity": "easy",
+          "description": "Relaxed, conversational pace the whole time (RPE 3-4/10)."
+        },
+        {
+          "day": "Sun",
+          "type": "long",
+          "distance_km": 9.0,
+          "intensity": "easy",
+          "description": "Long run at an easy, steady pace (RPE 3-4/10); finish feeling like you could go farther."
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "sessions": [
+        {
+          "day": "Mon",
+          "type": "easy",
+          "distance_km": 5.5,
+          "intensity": "easy",
+          "description": "Easy, relaxed effort, conversational throughout (RPE 3-4/10)."
+        },
+        {
+          "day": "Wed",
+          "type": "intervals",
+          "distance_km": 6.5,
+          "intensity": "hard",
+          "description": "Warm up 1.5km easy, then 5 x 2min at strong effort (RPE 6/10) with 2min easy jog between; cool down to finish."
+        },
+        {
+          "day": "Fri",
+          "type": "easy",
+          "distance_km": 5.0,
+          "intensity": "easy",
+          "description": "All easy pace, focus on good form and staying relaxed (RPE 3/10)."
+        },
+        {
+          "day": "Sun",
+          "type": "long",
+          "distance_km": 10.0,
+          "intensity": "easy",
+          "description": "Long run at comfortable pace (RPE 3-4/10); hydrate well, steady effort."
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "sessions": [
+        {
+          "day": "Mon",
+          "type": "easy",
+          "distance_km": 6.0,
+          "intensity": "easy",
+          "description": "Comfortable run, able to talk easily (RPE 3-4/10)."
+        },
+        {
+          "day": "Wed",
+          "type": "tempo",
+          "distance_km": 7.0,
+          "intensity": "hard",
+          "description": "1.5km easy, 4km steady (RPE 5-6/10, 'comfortably hard'), 1.5km cool down."
+        },
+        {
+          "day": "Fri",
+          "type": "easy",
+          "distance_km": 5.0,
+          "intensity": "easy",
+          "description": "Stay relaxed, good posture. All easy pace (RPE 3/10)."
+        },
+        {
+          "day": "Sun",
+          "type": "long",
+          "distance_km": 11.0,
+          "intensity": "easy",
+          "description": "Easy, steady pace; finish feeling strong but not exhausted (RPE 3-4/10)."
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "sessions": [
+        {
+          "day": "Mon",
+          "type": "easy",
+          "distance_km": 5.0,
+          "intensity": "easy",
+          "description": "Easy effort, relaxed stride (RPE 3/10)."
+        },
+        {
+          "day": "Wed",
+          "type": "intervals",
+          "distance_km": 5.5,
+          "intensity": "hard",
+          "description": "Warm up 1.5km, 4 x 2min at strong effort (RPE 6/10) with 2min easy jog, cool down to finish."
+        },
+        {
+          "day": "Fri",
+          "type": "recovery",
+          "distance_km": 4.5,
+          "intensity": "easy",
+          "description": "Very easy pace, relaxed, focus on form (RPE 2-3/10)."
+        },
+        {
+          "day": "Sun",
+          "type": "long",
+          "distance_km": 8.0,
+          "intensity": "easy",
+          "description": "Shorter long run, easy pace, use as a cutback week (RPE 3/10)."
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "sessions": [
+        {
+          "day": "Mon",
+          "type": "easy",
+          "distance_km": 6.0,
+          "intensity": "easy",
+          "description": "Relaxed, conversational (RPE 3-4/10)."
+        },
+        {
+          "day": "Wed",
+          "type": "tempo",
+          "distance_km": 7.5,
+          "intensity": "hard",
+          "description": "1.5km easy, 4.5km steady tempo (RPE 6/10), 1.5km easy cool down."
+        },
+        {
+          "day": "Fri",
+          "type": "easy",
+          "distance_km": 5.5,
+          "intensity": "easy",
+          "description": "All at easy pace, feeling comfortable the whole time (RPE 3/10)."
+        },
+        {
+          "day": "Sun",
+          "type": "long",
+          "distance_km": 12.0,
+          "intensity": "easy",
+          "description": "Long run at easy, steady pace (RPE 3-4/10), practice fueling if possible."
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "sessions": [
+        {
+          "day": "Mon",
+          "type": "easy",
+          "distance_km": 6.0,
+          "intensity": "easy",
+          "description": "Keep effort relaxed, able to hold conversation (RPE 3/10)."
+        },
+        {
+          "day": "Wed",
+          "type": "intervals",
+          "distance_km": 8.0,
+          "intensity": "hard",
+          "description": "1.5km warm up, 5 x 3min at strong, steady effort (RPE 6/10) with 2min easy jog, then cool down."
+        },
+        {
+          "day": "Fri",
+          "type": "easy",
+          "distance_km": 6.0,
+          "intensity": "easy",
+          "description": "Relax and focus on recovery, all at easy pace (RPE 3/10)."
+        },
+        {
+          "day": "Sun",
+          "type": "long",
+          "distance_km": 13.0,
+          "intensity": "easy",
+          "description": "Long, steady run at easy, sustainable effort (RPE 3-4/10); hydrate and fuel as practiced."
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "sessions": [
+        {
+          "day": "Mon",
+          "type": "easy",
+          "distance_km": 6.5,
+          "intensity": "easy",
+          "description": "Comfortable, maintain good form throughout (RPE 3-4/10)."
+        },
+        {
+          "day": "Wed",
+          "type": "tempo",
+          "distance_km": 8.0,
+          "intensity": "hard",
+          "description": "1.5km easy, 5km steady tempo (RPE 6/10), 1.5km easy cool down."
+        },
+        {
+          "day": "Fri",
+          "type": "easy",
+          "distance_km": 6.0,
+          "intensity": "easy",
+          "description": "All at easy, relaxed pace (RPE 3/10)."
+        },
+        {
+          "day": "Sun",
+          "type": "long",
+          "distance_km": 14.0,
+          "intensity": "easy",
+          "description": "Long run at easy pace, finish feeling strong (RPE 3-4/10), focus on fueling."
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "sessions": [
+        {
+          "day": "Mon",
+          "type": "easy",
+          "distance_km": 5.0,
+          "intensity": "easy",
+          "description": "Relaxed, shorter to aid recovery (RPE 3/10)."
+        },
+        {
+          "day": "Wed",
+          "type": "intervals",
+          "distance_km": 6.5,
+          "intensity": "hard",
+          "description": "1.5km warm up, 4 x 3min at steady, strong effort (RPE 6/10) with 2min jog, cool down to finish."
+        },
+        {
+          "day": "Fri",
+          "type": "recovery",
+          "distance_km": 5.0,
+          "intensity": "easy",
+          "description": "Very easy pace, gentle, focus on relaxation (RPE 2-3/10)."
+        },
+        {
+          "day": "Sun",
+          "type": "long",
+          "distance_km": 10.0,
+          "intensity": "easy",
+          "description": "Shorter long run for recovery week, all at easy effort (RPE 3/10)."
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "sessions": [
+        {
+          "day": "Mon",
+          "type": "easy",
+          "distance_km": 7.0,
+          "intensity": "easy",
+          "description": "Comfortable, conversational pace (RPE 3-4/10)."
+        },
+        {
+          "day": "Wed",
+          "type": "tempo",
+          "distance_km": 9.0,
+          "intensity": "hard",
+          "description": "1.5km easy, 6km brisk steady (RPE 6/10), 1.5km easy cool down."
+        },
+        {
+          "day": "Fri",
+          "type": "easy",
+          "distance_km": 6.5,
+          "intensity": "easy",
+          "description": "Stay relaxed, recovery focused (RPE 3/10)."
+        },
+        {
+          "day": "Sun",
+          "type": "long",
+          "distance_km": 15.0,
+          "intensity": "easy",
+          "description": "Longest run so far, keep effort sustainable (RPE 3-4/10), practice fueling."
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "sessions": [
+        {
+          "day": "Mon",
+          "type": "easy",
+          "distance_km": 7.0,
+          "intensity": "easy",
+          "description": "Easy effort, relaxed stride (RPE 3/10)."
+        },
+        {
+          "day": "Wed",
+          "type": "intervals",
+          "distance_km": 8.0,
+          "intensity": "hard",
+          "description": "1.5km warm up, 5 x 4min at strong, steady effort (RPE 6/10) with 2min jog, cool down to finish."
+        },
+        {
+          "day": "Fri",
+          "type": "easy",
+          "distance_km": 6.5,
+          "intensity": "easy",
+          "description": "Comfortable run, focus on recovery (RPE 3/10)."
+        },
+        {
+          "day": "Sun",
+          "type": "long",
+          "distance_km": 16.0,
+          "intensity": "easy",
+          "description": "Longest pre-race run, keep pace sustainable (RPE 3-4/10), practice fueling for the race."
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "sessions": [
+        {
+          "day": "Mon",
+          "type": "easy",
+          "distance_km": 5.0,
+          "intensity": "easy",
+          "description": "Shorter, relaxed, focus on feeling good (RPE 3/10)."
+        },
+        {
+          "day": "Wed",
+          "type": "tempo",
+          "distance_km": 7.0,
+          "intensity": "hard",
+          "description": "1.5km easy, 4km steady (RPE 6/10), 1.5km easy cool down."
+        },
+        {
+          "day": "Fri",
+          "type": "recovery",
+          "distance_km": 5.0,
+          "intensity": "easy",
+          "description": "Very relaxed, gentle pace (RPE 2-3/10)."
+        },
+        {
+          "day": "Sun",
+          "type": "long",
+          "distance_km": 12.0,
+          "intensity": "easy",
+          "description": "Long run at easy pace, last double digit run before race (RPE 3-4/10)."
+        }
+      ]
+    },
+    {
+      "week": 12,
+      "sessions": [
+        {
+          "day": "Mon",
+          "type": "easy",
+          "distance_km": 5.0,
+          "intensity": "easy",
+          "description": "Easy run, maintain rhythm, feel good (RPE 3/10)."
+        },
+        {
+          "day": "Wed",
+          "type": "intervals",
+          "distance_km": 5.0,
+          "intensity": "hard",
+          "description": "1.5km easy, 4 x 2min at race effort (RPE 5/10), 2min jog between, 1.5km easy cool down."
+        },
+        {
+          "day": "Fri",
+          "type": "easy",
+          "distance_km": 4.0,
+          "intensity": "easy",
+          "description": "Short and relaxed (RPE 2-3/10)."
+        },
+        {
+          "day": "Sun",
+          "type": "race",
+          "distance_km": 21.1,
+          "intensity": "hard",
+          "description": "Race day! Start at comfortable effort (RPE 4/10 first half), then gradually push (up to RPE 6/10 in final km); maintain fueling plan."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//aitrainingplan.app//agent pipeline//EN
+BEGIN:VEVENT
+UID:w1-Mon-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261102
+SUMMARY:Easy 5 km
+DESCRIPTION:Comfortable run\, relaxed pace\, able to hold conversation (RPE 3-4/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w1-Wed-intervals@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261104
+SUMMARY:Intervals 6 km
+DESCRIPTION:Warm up 1.5km easy\, then 4 x 3min at steady effort (RPE 6/10) with 2min easy jog between\; cool down to finish.
+END:VEVENT
+BEGIN:VEVENT
+UID:w1-Fri-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261106
+SUMMARY:Easy 5 km
+DESCRIPTION:Relaxed\, conversational pace the whole time (RPE 3-4/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w1-Sun-long@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261108
+SUMMARY:Long 9 km
+DESCRIPTION:Long run at an easy\, steady pace (RPE 3-4/10)\; finish feeling like you could go farther.
+END:VEVENT
+BEGIN:VEVENT
+UID:w2-Mon-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261109
+SUMMARY:Easy 5.5 km
+DESCRIPTION:Easy\, relaxed effort\, conversational throughout (RPE 3-4/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w2-Wed-intervals@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261111
+SUMMARY:Intervals 6.5 km
+DESCRIPTION:Warm up 1.5km easy\, then 5 x 2min at strong effort (RPE 6/10) with 2min easy jog between\; cool down to finish.
+END:VEVENT
+BEGIN:VEVENT
+UID:w2-Fri-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261113
+SUMMARY:Easy 5 km
+DESCRIPTION:All easy pace\, focus on good form and staying relaxed (RPE 3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w2-Sun-long@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261115
+SUMMARY:Long 10 km
+DESCRIPTION:Long run at comfortable pace (RPE 3-4/10)\; hydrate well\, steady effort.
+END:VEVENT
+BEGIN:VEVENT
+UID:w3-Mon-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261116
+SUMMARY:Easy 6 km
+DESCRIPTION:Comfortable run\, able to talk easily (RPE 3-4/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w3-Wed-tempo@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261118
+SUMMARY:Tempo 7 km
+DESCRIPTION:1.5km easy\, 4km steady (RPE 5-6/10\, 'comfortably hard')\, 1.5km cool down.
+END:VEVENT
+BEGIN:VEVENT
+UID:w3-Fri-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261120
+SUMMARY:Easy 5 km
+DESCRIPTION:Stay relaxed\, good posture. All easy pace (RPE 3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w3-Sun-long@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261122
+SUMMARY:Long 11 km
+DESCRIPTION:Easy\, steady pace\; finish feeling strong but not exhausted (RPE 3-4/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w4-Mon-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261123
+SUMMARY:Easy 5 km
+DESCRIPTION:Easy effort\, relaxed stride (RPE 3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w4-Wed-intervals@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261125
+SUMMARY:Intervals 5.5 km
+DESCRIPTION:Warm up 1.5km\, 4 x 2min at strong effort (RPE 6/10) with 2min easy jog\, cool down to finish.
+END:VEVENT
+BEGIN:VEVENT
+UID:w4-Fri-recovery@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261127
+SUMMARY:Recovery 4.5 km
+DESCRIPTION:Very easy pace\, relaxed\, focus on form (RPE 2-3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w4-Sun-long@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261129
+SUMMARY:Long 8 km
+DESCRIPTION:Shorter long run\, easy pace\, use as a cutback week (RPE 3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w5-Mon-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261130
+SUMMARY:Easy 6 km
+DESCRIPTION:Relaxed\, conversational (RPE 3-4/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w5-Wed-tempo@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261202
+SUMMARY:Tempo 7.5 km
+DESCRIPTION:1.5km easy\, 4.5km steady tempo (RPE 6/10)\, 1.5km easy cool down.
+END:VEVENT
+BEGIN:VEVENT
+UID:w5-Fri-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261204
+SUMMARY:Easy 5.5 km
+DESCRIPTION:All at easy pace\, feeling comfortable the whole time (RPE 3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w5-Sun-long@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261206
+SUMMARY:Long 12 km
+DESCRIPTION:Long run at easy\, steady pace (RPE 3-4/10)\, practice fueling if possible.
+END:VEVENT
+BEGIN:VEVENT
+UID:w6-Mon-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261207
+SUMMARY:Easy 6 km
+DESCRIPTION:Keep effort relaxed\, able to hold conversation (RPE 3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w6-Wed-intervals@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261209
+SUMMARY:Intervals 8 km
+DESCRIPTION:1.5km warm up\, 5 x 3min at strong\, steady effort (RPE 6/10) with 2min easy jog\, then cool down.
+END:VEVENT
+BEGIN:VEVENT
+UID:w6-Fri-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261211
+SUMMARY:Easy 6 km
+DESCRIPTION:Relax and focus on recovery\, all at easy pace (RPE 3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w6-Sun-long@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261213
+SUMMARY:Long 13 km
+DESCRIPTION:Long\, steady run at easy\, sustainable effort (RPE 3-4/10)\; hydrate and fuel as practiced.
+END:VEVENT
+BEGIN:VEVENT
+UID:w7-Mon-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261214
+SUMMARY:Easy 6.5 km
+DESCRIPTION:Comfortable\, maintain good form throughout (RPE 3-4/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w7-Wed-tempo@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261216
+SUMMARY:Tempo 8 km
+DESCRIPTION:1.5km easy\, 5km steady tempo (RPE 6/10)\, 1.5km easy cool down.
+END:VEVENT
+BEGIN:VEVENT
+UID:w7-Fri-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261218
+SUMMARY:Easy 6 km
+DESCRIPTION:All at easy\, relaxed pace (RPE 3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w7-Sun-long@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261220
+SUMMARY:Long 14 km
+DESCRIPTION:Long run at easy pace\, finish feeling strong (RPE 3-4/10)\, focus on fueling.
+END:VEVENT
+BEGIN:VEVENT
+UID:w8-Mon-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261221
+SUMMARY:Easy 5 km
+DESCRIPTION:Relaxed\, shorter to aid recovery (RPE 3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w8-Wed-intervals@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261223
+SUMMARY:Intervals 6.5 km
+DESCRIPTION:1.5km warm up\, 4 x 3min at steady\, strong effort (RPE 6/10) with 2min jog\, cool down to finish.
+END:VEVENT
+BEGIN:VEVENT
+UID:w8-Fri-recovery@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261225
+SUMMARY:Recovery 5 km
+DESCRIPTION:Very easy pace\, gentle\, focus on relaxation (RPE 2-3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w8-Sun-long@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261227
+SUMMARY:Long 10 km
+DESCRIPTION:Shorter long run for recovery week\, all at easy effort (RPE 3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w9-Mon-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261228
+SUMMARY:Easy 7 km
+DESCRIPTION:Comfortable\, conversational pace (RPE 3-4/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w9-Wed-tempo@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20261230
+SUMMARY:Tempo 9 km
+DESCRIPTION:1.5km easy\, 6km brisk steady (RPE 6/10)\, 1.5km easy cool down.
+END:VEVENT
+BEGIN:VEVENT
+UID:w9-Fri-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20270101
+SUMMARY:Easy 6.5 km
+DESCRIPTION:Stay relaxed\, recovery focused (RPE 3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w9-Sun-long@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20270103
+SUMMARY:Long 15 km
+DESCRIPTION:Longest run so far\, keep effort sustainable (RPE 3-4/10)\, practice fueling.
+END:VEVENT
+BEGIN:VEVENT
+UID:w10-Mon-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20270104
+SUMMARY:Easy 7 km
+DESCRIPTION:Easy effort\, relaxed stride (RPE 3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w10-Wed-intervals@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20270106
+SUMMARY:Intervals 8 km
+DESCRIPTION:1.5km warm up\, 5 x 4min at strong\, steady effort (RPE 6/10) with 2min jog\, cool down to finish.
+END:VEVENT
+BEGIN:VEVENT
+UID:w10-Fri-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20270108
+SUMMARY:Easy 6.5 km
+DESCRIPTION:Comfortable run\, focus on recovery (RPE 3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w10-Sun-long@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20270110
+SUMMARY:Long 16 km
+DESCRIPTION:Longest pre-race run\, keep pace sustainable (RPE 3-4/10)\, practice fueling for the race.
+END:VEVENT
+BEGIN:VEVENT
+UID:w11-Mon-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20270111
+SUMMARY:Easy 5 km
+DESCRIPTION:Shorter\, relaxed\, focus on feeling good (RPE 3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w11-Wed-tempo@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20270113
+SUMMARY:Tempo 7 km
+DESCRIPTION:1.5km easy\, 4km steady (RPE 6/10)\, 1.5km easy cool down.
+END:VEVENT
+BEGIN:VEVENT
+UID:w11-Fri-recovery@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20270115
+SUMMARY:Recovery 5 km
+DESCRIPTION:Very relaxed\, gentle pace (RPE 2-3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w11-Sun-long@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20270117
+SUMMARY:Long 12 km
+DESCRIPTION:Long run at easy pace\, last double digit run before race (RPE 3-4/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w12-Mon-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20270118
+SUMMARY:Easy 5 km
+DESCRIPTION:Easy run\, maintain rhythm\, feel good (RPE 3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w12-Wed-intervals@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20270120
+SUMMARY:Intervals 5 km
+DESCRIPTION:1.5km easy\, 4 x 2min at race effort (RPE 5/10)\, 2min jog between\, 1.5km easy cool down.
+END:VEVENT
+BEGIN:VEVENT
+UID:w12-Fri-easy@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20270122
+SUMMARY:Easy 4 km
+DESCRIPTION:Short and relaxed (RPE 2-3/10).
+END:VEVENT
+BEGIN:VEVENT
+UID:w12-Sun-race@aitrainingplan.app
+DTSTAMP:20261020T181325Z
+DTSTART;VALUE=DATE:20270124
+SUMMARY:Race 21.1 km
+DESCRIPTION:Race day! Start at comfortable effort (RPE 4/10 first half)\, then gradually push (up to RPE 6/10 in final km)\; maintain fueling plan.
+END:VEVENT
+END:VCALENDAR
