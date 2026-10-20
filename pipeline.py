@@ -16,7 +16,8 @@ import os
 import re
 import sys
 import time
-from datetime import date, timedelta
+from datetime import UTC, date, datetime, timedelta
+from itertools import pairwise
 from pathlib import Path
 
 import httpx
@@ -93,11 +94,15 @@ def call_llm(system: str, user: str) -> tuple[str, dict]:
         body = r.json()
         text = body["choices"][0]["message"]["content"]
         usage = body.get("usage", {})
-    return text, {"model": model, "seconds": round(time.monotonic() - t0, 1), "usage": usage}
+    return text, {
+        "model": model,
+        "seconds": round(time.monotonic() - t0, 1),
+        "usage": usage,
+    }
 
 
 def parse_plan(text: str) -> dict:
-    m = re.search(r"```(?:json)?\s*(.*?)```", text, re.S)
+    m = re.search(r"```(?:json)?\s*(.*?)```", text, re.DOTALL)
     return json.loads(m.group(1) if m else text)
 
 
@@ -113,7 +118,9 @@ def validate(plan: dict, athlete: dict) -> list[str]:
     weeks = plan.get("weeks")
     n = athlete["weeks"]
     if not isinstance(weeks, list) or len(weeks) != n:
-        return [f"plan must have exactly {n} weeks, got {len(weeks) if isinstance(weeks, list) else 'none'}"]
+        return [
+            f"plan must have exactly {n} weeks, got {len(weeks) if isinstance(weeks, list) else 'none'}"
+        ]
 
     # schema and per-session sanity
     for w in weeks:
@@ -123,7 +130,10 @@ def validate(plan: dict, athlete: dict) -> list[str]:
                 v.append(f"{where}: day must be one of {DAYS}")
             if s.get("type") not in TYPES:
                 v.append(f"{where}: unknown type {s.get('type')!r}")
-            if not isinstance(s.get("distance_km"), (int, float)) or s["distance_km"] < 0:
+            if (
+                not isinstance(s.get("distance_km"), (int, float))
+                or s["distance_km"] < 0
+            ):
                 v.append(f"{where}: distance_km must be a non-negative number")
             if s.get("type") in HARD_TYPES and s.get("intensity") != "hard":
                 v.append(f"{where}: {s['type']} must be intensity 'hard'")
@@ -133,14 +143,18 @@ def validate(plan: dict, athlete: dict) -> list[str]:
         return v  # numbers below are meaningless on a malformed plan
 
     vols = [week_km(w) for w in weeks]
-    deloads = {i for i in range(3, n - 2, 4)}  # 0-based: weeks 4, 8, ... outside the taper
+    deloads = {
+        i for i in range(3, n - 2, 4)
+    }  # 0-based: weeks 4, 8, ... outside the taper
     taper = {n - 2, n - 1}
 
     for i, w in enumerate(weeks):
         wk = i + 1
         active = [s for s in w["sessions"] if s["type"] != "rest"]
         if len(active) > athlete["days_per_week"]:
-            v.append(f"week {wk}: {len(active)} training days, athlete has {athlete['days_per_week']}")
+            v.append(
+                f"week {wk}: {len(active)} training days, athlete has {athlete['days_per_week']}"
+            )
         days = [s["day"] for s in active]
         if len(days) != len(set(days)):
             v.append(f"week {wk}: two sessions on the same day")
@@ -148,35 +162,62 @@ def validate(plan: dict, athlete: dict) -> list[str]:
         if i == 0:
             cap = athlete["current_weekly_km"] * 1.10
             if vols[0] > cap:
-                v.append(f"week 1: {vols[0]:.1f} km exceeds 110% of current {athlete['current_weekly_km']} km ({cap:.1f})")
+                v.append(
+                    f"week 1: {vols[0]:.1f} km exceeds 110% of current {athlete['current_weekly_km']} km ({cap:.1f})"
+                )
         elif i in deloads:
             if vols[i] > vols[i - 1] * 0.80:
-                v.append(f"week {wk}: deload week must be <=80% of week {wk - 1} ({vols[i]:.1f} vs cap {vols[i - 1] * 0.8:.1f} km)")
+                v.append(
+                    f"week {wk}: deload week must be <=80% of week {wk - 1} ({vols[i]:.1f} vs cap {vols[i - 1] * 0.8:.1f} km)"
+                )
         elif i not in taper:
-            ref = i - 2 if (i - 1) in deloads else i - 1  # after a deload, compare with the week before it
+            ref = (
+                i - 2 if (i - 1) in deloads else i - 1
+            )  # after a deload, compare with the week before it
             cap = vols[ref] * 1.10
             if vols[i] > cap + 0.05:
-                v.append(f"week {wk}: {vols[i]:.1f} km is more than +10% on week {ref + 1} ({vols[ref]:.1f} km, cap {cap:.1f})")
+                v.append(
+                    f"week {wk}: {vols[i]:.1f} km is more than +10% on week {ref + 1} ({vols[ref]:.1f} km, cap {cap:.1f})"
+                )
 
         if i < n - 1 and vols[i] > 0:
-            longest = max((s["distance_km"] for s in w["sessions"] if s["type"] in RUN_TYPES), default=0)
+            longest = max(
+                (s["distance_km"] for s in w["sessions"] if s["type"] in RUN_TYPES),
+                default=0,
+            )
             if longest > 0.35 * vols[i] + 0.05:
-                v.append(f"week {wk}: longest run {longest:.1f} km is over 35% of the week ({vols[i]:.1f} km)")
-            hard = sum(s["distance_km"] for s in w["sessions"] if s["type"] in HARD_TYPES)
+                v.append(
+                    f"week {wk}: longest run {longest:.1f} km is over 35% of the week ({vols[i]:.1f} km)"
+                )
+            hard = sum(
+                s["distance_km"] for s in w["sessions"] if s["type"] in HARD_TYPES
+            )
             if hard > 0.25 * vols[i] + 0.05:
-                v.append(f"week {wk}: {hard:.1f} km hard is over 25% of {vols[i]:.1f} km (80/20 with warm-up slack)")
+                v.append(
+                    f"week {wk}: {hard:.1f} km hard is over 25% of {vols[i]:.1f} km (80/20 with warm-up slack)"
+                )
 
     peak = max(vols[: n - 2])
     if vols[n - 2] > 0.80 * peak:
-        v.append(f"week {n - 1}: taper must be <=80% of peak ({vols[n - 2]:.1f} vs cap {0.8 * peak:.1f} km)")
+        v.append(
+            f"week {n - 1}: taper must be <=80% of peak ({vols[n - 2]:.1f} vs cap {0.8 * peak:.1f} km)"
+        )
     race_week_other = vols[n - 1] - athlete["race_km"]
     if race_week_other > 0.40 * peak:
-        v.append(f"week {n}: {race_week_other:.1f} km besides the race is over 40% of peak ({0.4 * peak:.1f})")
+        v.append(
+            f"week {n}: {race_week_other:.1f} km besides the race is over 40% of peak ({0.4 * peak:.1f})"
+        )
 
     races = [s for s in weeks[-1]["sessions"] if s["type"] == "race"]
     race_day = DAYS[date.fromisoformat(athlete["race_date"]).weekday()]
-    if len(races) != 1 or races[0]["day"] != race_day or abs(races[0]["distance_km"] - athlete["race_km"]) > 0.2:
-        v.append(f"week {n}: needs exactly one race session of {athlete['race_km']} km on {race_day}")
+    if (
+        len(races) != 1
+        or races[0]["day"] != race_day
+        or abs(races[0]["distance_km"] - athlete["race_km"]) > 0.2
+    ):
+        v.append(
+            f"week {n}: needs exactly one race session of {athlete['race_km']} km on {race_day}"
+        )
 
     # hard days in a row, across week boundaries too (Sun -> Mon)
     hard_days = sorted(
@@ -185,9 +226,11 @@ def validate(plan: dict, athlete: dict) -> list[str]:
         for s in w["sessions"]
         if s["type"] in HARD_TYPES
     )
-    for a, b in zip(hard_days, hard_days[1:]):
+    for a, b in pairwise(hard_days):
         if b - a == 1:
-            v.append(f"hard sessions on consecutive days: week {a // 7 + 1} {DAYS[a % 7]} and week {b // 7 + 1} {DAYS[b % 7]}")
+            v.append(
+                f"hard sessions on consecutive days: week {a // 7 + 1} {DAYS[a % 7]} and week {b // 7 + 1} {DAYS[b % 7]}"
+            )
     return v
 
 
@@ -196,19 +239,35 @@ def validate(plan: dict, athlete: dict) -> list[str]:
 
 def to_ics(plan: dict, athlete: dict) -> str:
     race = date.fromisoformat(athlete["race_date"])
-    start = race - timedelta(days=race.weekday()) - timedelta(weeks=athlete["weeks"] - 1)  # Monday of week 1
-    lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//aitrainingplan.app//agent pipeline//EN"]
+    start = (
+        race - timedelta(days=race.weekday()) - timedelta(weeks=athlete["weeks"] - 1)
+    )  # Monday of week 1
+    lines = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//aitrainingplan.app//agent pipeline//EN",
+    ]
     for w in plan["weeks"]:
         for s in w["sessions"]:
             if s["type"] == "rest":
                 continue
             d = start + timedelta(weeks=w["week"] - 1, days=DAYS.index(s["day"]))
-            title = f"{s['type'].title()} {s['distance_km']:g} km" if s["distance_km"] else s["type"].title()
-            desc = s.get("description", "").replace("\\", "\\\\").replace(",", "\\,").replace(";", "\\;").replace("\n", "\\n")
+            title = (
+                f"{s['type'].title()} {s['distance_km']:g} km"
+                if s["distance_km"]
+                else s["type"].title()
+            )
+            desc = (
+                s.get("description", "")
+                .replace("\\", "\\\\")
+                .replace(",", "\\,")
+                .replace(";", "\\;")
+                .replace("\n", "\\n")
+            )
             lines += [
                 "BEGIN:VEVENT",
                 f"UID:w{w['week']}-{s['day']}-{s['type']}@aitrainingplan.app",
-                f"DTSTAMP:{date.today():%Y%m%d}T000000Z",
+                f"DTSTAMP:{datetime.now(UTC):%Y%m%dT%H%M%SZ}",
                 f"DTSTART;VALUE=DATE:{d:%Y%m%d}",
                 f"SUMMARY:{title}",
                 f"DESCRIPTION:{desc}",
@@ -231,7 +290,10 @@ def main(athlete_path: str = "athlete.json") -> int:
         entry = {"step": step, **fields}
         with log.open("a") as f:
             f.write(json.dumps(entry) + "\n")
-        print(f"[{step}] " + ", ".join(f"{k}={v}" for k, v in fields.items() if k != "violations"))
+        print(
+            f"[{step}] "
+            + ", ".join(f"{k}={v}" for k, v in fields.items() if k != "violations")
+        )
 
     text, meta = call_llm(PLANNER_SYSTEM, "Athlete:\n" + json.dumps(athlete, indent=2))
     (run / "01_planner_raw.txt").write_text(text)
@@ -244,16 +306,28 @@ def main(athlete_path: str = "athlete.json") -> int:
             violations = validate(plan, athlete)
         except (json.JSONDecodeError, KeyError, TypeError) as e:
             violations = [f"output is not a valid plan: {type(e).__name__}: {e}"]
-        (run / f"02_validation_{attempt}.json").write_text(json.dumps(violations, indent=2))
-        record("validate", attempt=attempt, violations_count=len(violations), violations=violations)
+        (run / f"02_validation_{attempt}.json").write_text(
+            json.dumps(violations, indent=2)
+        )
+        record(
+            "validate",
+            attempt=attempt,
+            violations_count=len(violations),
+            violations=violations,
+        )
         for line in violations:
             print("   -", line)
         if not violations:
             break
         if attempt == MAX_REPAIRS:
-            record("abort", reason=f"still {len(violations)} violations after {MAX_REPAIRS} repairs")
+            record(
+                "abort",
+                reason=f"still {len(violations)} violations after {MAX_REPAIRS} repairs",
+            )
             return 1
-        user = json.dumps({"athlete": athlete, "plan": plan, "violations": violations}, indent=2)
+        user = json.dumps(
+            {"athlete": athlete, "plan": plan, "violations": violations}, indent=2
+        )
         text, meta = call_llm(REPAIR_SYSTEM, user)
         (run / f"03_repair_{attempt + 1}_raw.txt").write_text(text)
         record("repair", attempt=attempt + 1, **meta)
